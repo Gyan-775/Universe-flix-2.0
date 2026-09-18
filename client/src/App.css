@@ -381,3 +381,792 @@ mask-image: linear-gradient(
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; } }
 
 @keyframes skeletonShimmer { from { background-position: 100% 0; } to { background-position: -100% 0; } }
+/* =========================================================
+   UNIVERSE-FLIX
+   FINAL MOBILE RESPONSIVE PASS
+   Paste this at the VERY BOTTOM of App.css
+   ========================================================= */
+
+@media (max-width: 767px) {
+
+  /* ---------- GLOBAL ---------- */
+
+  html,
+  body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  body {
+    min-width: 320px;
+  }
+
+
+  /* ---------- NAVBAR ---------- */
+
+  .site-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    width: 100%;
+    min-height: 64px;
+
+    padding: 17px 18px;
+
+    gap: 12px;
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    box-sizing: border-box;
+  }
+
+  .wordmark {
+    font-size: 1rem;
+    letter-spacing: .06em;
+  }
+
+  .site-nav nav {
+    display: none;
+  }
+
+  .nav-status {
+    margin-left: auto;
+    white-space: nowrap;
+    font-size: .56rem;
+  }
+
+  .nav-status i,
+  .signal-dot {
+    width: 6px;
+    height: 6px;
+    margin-right: 5px;
+  }
+
+
+  /* ---------- HERO ---------- */
+
+  .hero-section {
+    width: 100%;
+
+    min-height: 720px;
+    height: auto;
+
+    padding: 108px 20px 86px;
+
+    align-items: flex-end;
+
+    box-sizing: border-box;
+  }
+
+  .hero-backdrop {
+    inset: 0;
+
+    background-position: 62% center;
+
+    transform: none !important;
+  }
+
+  .hero-copy {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .hero-copy h1 {
+    width: 100%;
+    max-width: 100%;
+
+    margin: 12px 0 16px;
+
+    font-size: clamp(2.65rem, 12.5vw, 4.8rem);
+
+    line-height: .94;
+
+    letter-spacing: -.055em;
+
+    overflow-wrap: anywhere;
+  }
+
+  .hero-description {
+    width: 100%;
+    max-width: 560px;
+
+    margin-top: 15px;
+
+    font-size: .86rem;
+
+    line-height: 1.65;
+
+    -webkit-line-clamp: 4;
+  }
+
+  .hero-metadata,
+  .hero-ratings {
+    max-width: 100%;
+
+    gap: 6px 10px;
+
+    font-size: .56rem;
+
+    line-height: 1.55;
+  }
+
+  .hero-metadata span + span::before {
+    margin-right: 10px;
+  }
+
+  .hero-actions {
+    width: 100%;
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 9px;
+
+    margin-top: 20px;
+  }
+
+  .hero-actions .button {
+    min-width: 0;
+
+    flex: 1 1 150px;
+
+    min-height: 46px;
+
+    padding: 10px 13px;
+
+    font-size: .64rem;
+  }
+
+  .hero-rail {
+    right: 20px;
+    left: 20px;
+    bottom: 22px;
+
+    gap: 9px;
+
+    overflow: hidden;
+
+    white-space: nowrap;
+
+    font-size: .49rem;
+  }
+
+  .hero-rail::before {
+    display: none;
+  }
+
+  .scroll-mark {
+    display: none;
+  }
+
+  .hero-orbit {
+    opacity: .3;
+
+    transform: scale(.62);
+
+    transform-origin: right center;
+  }
+
+  .hero-beam {
+    opacity: .2;
+  }
+
+
+  /* ---------- MAIN SECTIONS ---------- */
+
+  .archive-section,
+  .signal-section {
+    width: 100%;
+
+    padding: 70px 20px;
+
+    box-sizing: border-box;
+  }
+
+  .signal-dark,
+  .home-rail-section,
+  .featured-universes {
+    width: 100%;
+
+    max-width: none;
+  }
+
+  .home-rails {
+    gap: 48px;
+
+    padding: 38px 0 8px;
+  }
+
+  .home-rail-heading {
+    align-items: flex-start;
+
+    gap: 14px;
+
+    margin-bottom: 16px;
+  }
+
+  .home-rail-heading h2 {
+    font-size: clamp(1.8rem, 8vw, 2.5rem);
+
+    line-height: 1;
+  }
+
+  .home-rail-heading p:not(.eyebrow) {
+    font-size: .72rem;
+
+    line-height: 1.5;
+  }
+
+
+  /* ---------- SECTION HEADINGS ---------- */
+
+  .section-heading {
+    display: block;
+
+    margin-bottom: 20px;
+  }
+
+  .section-heading h2,
+  .signal-section h2 {
+    width: 100%;
+    max-width: 100%;
+
+    margin: 9px 0 12px;
+
+    font-size: clamp(2rem, 10vw, 3.2rem);
+
+    line-height: .98;
+
+    overflow-wrap: anywhere;
+  }
+
+  .section-heading p,
+  .signal-section p {
+    max-width: 100%;
+
+    font-size: .82rem;
+
+    line-height: 1.7;
+  }
+
+  .archive-count {
+    display: block;
+
+    margin-top: 14px;
+  }
+
+
+  /* ---------- FEATURED UNIVERSES ---------- */
+
+  .featured-universes {
+    padding-top: 20px;
+  }
+
+  .featured-universes-heading {
+    align-items: flex-start;
+  }
+
+  .featured-universes-heading > span {
+    display: none;
+  }
+
+  .featured-universes-list {
+    width: calc(100vw - 40px);
+
+    margin-right: -20px;
+
+    padding-right: 20px;
+
+    overflow-x: auto;
+
+    scrollbar-width: none;
+
+    -ms-overflow-style: none;
+  }
+
+  .featured-universes-list::-webkit-scrollbar {
+    display: none;
+  }
+
+  .featured-universe-tile {
+    flex: 0 0 auto;
+
+    padding: 11px 13px;
+  }
+
+
+  /* ---------- UNIVERSE SELECTOR ---------- */
+
+  .universe-strip {
+    width: calc(100vw - 40px);
+
+    margin-right: -20px;
+
+    display: flex;
+
+    gap: 8px;
+
+    padding-bottom: 12px;
+
+    overflow-x: auto;
+
+    scrollbar-width: none;
+
+    -ms-overflow-style: none;
+  }
+
+  .universe-strip::-webkit-scrollbar {
+    display: none;
+  }
+
+  .universe-chip {
+    flex: 0 0 auto;
+
+    min-height: 40px;
+
+    padding: 10px 12px;
+
+    white-space: nowrap;
+
+    font-size: .62rem;
+  }
+
+
+  /* ---------- SEARCH / FILTERS ---------- */
+
+  .filter-row {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns: 1fr;
+
+    gap: 9px;
+
+    margin: 12px 0 24px;
+  }
+
+  .filter-row label {
+    font-size: .56rem;
+  }
+
+  .filter-row input,
+  .filter-row select {
+    width: 100%;
+
+    min-width: 0;
+
+    min-height: 46px;
+
+    height: 46px;
+
+    box-sizing: border-box;
+
+    font-size: .78rem;
+  }
+
+
+  /* ---------- MOVIE RAILS ---------- */
+
+  .movie-rail {
+    width: calc(100vw - 40px);
+
+    margin-right: -20px;
+
+    display: flex;
+
+    gap: 10px;
+
+    padding-right: 20px;
+    padding-bottom: 15px;
+
+    overflow-x: auto;
+
+    scrollbar-width: none;
+
+    -ms-overflow-style: none;
+  }
+
+  .movie-rail::-webkit-scrollbar {
+    display: none;
+  }
+
+  .movie-rail-item,
+  .movie-rail-skeleton {
+    flex: 0 0 43vw;
+
+    max-width: 180px;
+
+    min-width: 0;
+  }
+
+
+  /* ---------- MOVIE GRID ---------- */
+
+  .movie-grid {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr)) !important;
+
+    gap: 10px;
+  }
+
+  .movie-grid > div {
+    min-width: 0;
+  }
+
+
+  /* ---------- MOVIE CARD ---------- */
+
+  .movie-card {
+    width: 100%;
+
+    min-width: 0;
+
+    border-radius: 10px;
+
+    overflow: hidden;
+
+    box-sizing: border-box;
+  }
+
+  .poster-frame {
+    width: 100%;
+
+    aspect-ratio: 2 / 3;
+
+    overflow: hidden;
+  }
+
+  .poster-frame img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+  }
+
+  .movie-card-info {
+    width: 100%;
+
+    min-width: 0;
+
+    padding: 10px;
+
+    box-sizing: border-box;
+  }
+
+  .movie-universe {
+    max-width: 100%;
+
+    overflow: hidden;
+
+    font-size: .5rem;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+  }
+
+  .movie-card h3 {
+    width: 100%;
+
+    min-width: 0;
+
+    margin: 7px 0 10px;
+
+    font-size: .82rem;
+
+    line-height: 1.18;
+
+    overflow-wrap: anywhere;
+
+    word-break: break-word;
+  }
+
+  .movie-meta,
+  .tag-line {
+    max-width: 100%;
+
+    font-size: .54rem;
+
+    line-height: 1.5;
+  }
+
+  .tag-line {
+    flex-wrap: wrap;
+  }
+
+
+  /* ---------- MOVIE DETAILS ---------- */
+
+  .route-page {
+    width: 100%;
+
+    padding: 105px 20px 70px;
+
+    box-sizing: border-box;
+  }
+
+  .back-link {
+    margin-bottom: 36px;
+  }
+
+  .detail-hero {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: stretch;
+
+    gap: 25px;
+
+    min-height: 0;
+  }
+
+  .detail-hero-poster,
+  .movie-detail-poster {
+    width: min(68vw, 240px);
+
+    align-self: center;
+  }
+
+  .detail-hero-copy h1,
+  .movie-detail-content h1 {
+    width: 100%;
+
+    max-width: 100%;
+
+    font-size: clamp(2.45rem, 11vw, 4.4rem);
+
+    line-height: .94;
+
+    overflow-wrap: anywhere;
+
+    word-break: break-word;
+  }
+
+  .detail-rating-row,
+  .movie-detail-meta,
+  .detail-tags {
+    gap: 8px 12px;
+
+    font-size: .58rem;
+
+    line-height: 1.6;
+  }
+
+  .movie-detail-overview {
+    width: 100%;
+
+    max-width: 100%;
+
+    margin: 21px 0;
+
+    font-size: .88rem;
+
+    line-height: 1.75;
+  }
+
+  .movie-detail-facts {
+    grid-template-columns: 1fr;
+
+    width: 100%;
+
+    max-width: 100%;
+  }
+
+  .similar-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    gap: 10px;
+  }
+
+  .similar-grid .movie-card-info {
+    padding: 9px;
+  }
+
+  .cast-rail {
+    width: calc(100vw - 40px);
+
+    margin-right: -20px;
+
+    padding-right: 20px;
+
+    overflow-x: auto;
+
+    scrollbar-width: none;
+  }
+
+  .cast-rail::-webkit-scrollbar {
+    display: none;
+  }
+
+
+  /* ---------- MODALS ---------- */
+
+  .detail-modal-backdrop {
+    width: 100%;
+
+    padding: 12px;
+
+    box-sizing: border-box;
+  }
+
+  .detail-modal,
+  .watch-order-modal {
+    width: 100%;
+
+    max-width: none;
+
+    max-height: calc(100dvh - 24px);
+
+    overflow-y: auto;
+
+    box-sizing: border-box;
+  }
+
+  .detail-modal {
+    padding: 12px;
+  }
+
+  .watch-order-modal {
+    padding: 22px 16px;
+  }
+
+  .watch-mode-row {
+    flex-wrap: wrap;
+  }
+
+  .watch-mode-row button {
+    min-height: 40px;
+  }
+
+
+  /* ---------- AI SECTION ---------- */
+
+  .ai-form {
+    width: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 9px;
+  }
+
+  .ai-form input,
+  .ai-form textarea,
+  .ai-form button {
+    width: 100%;
+
+    min-width: 0;
+
+    box-sizing: border-box;
+  }
+
+
+  /* ---------- TOUCH DEVICES ---------- */
+
+  .movie-card:hover {
+    transform: none;
+  }
+
+  .movie-card:hover img {
+    transform: none;
+  }
+
+  .button:hover {
+    transform: none;
+  }
+
+  .movie-card h3:hover {
+    transform: none;
+
+    text-shadow: none;
+  }
+}
+
+
+/* =========================================================
+   SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 390px) {
+
+  .site-nav {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .wordmark {
+    font-size: .92rem;
+  }
+
+  .hero-section {
+    padding-left: 16px;
+    padding-right: 16px;
+
+    padding-top: 98px;
+
+    min-height: 690px;
+  }
+
+  .archive-section,
+  .signal-section {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .featured-universes-list,
+  .universe-strip,
+  .movie-rail,
+  .cast-rail {
+    width: calc(100vw - 32px);
+
+    margin-right: -16px;
+
+    padding-right: 16px;
+  }
+
+  .movie-grid {
+    gap: 8px;
+  }
+
+  .movie-card-info {
+    padding: 8px;
+  }
+
+  .movie-card h3 {
+    font-size: .77rem;
+  }
+
+  .hero-actions .button {
+    flex-basis: 100%;
+  }
+}
+
+
+/* =========================================================
+   MOBILE VIEWPORT / BROWSER CHROME
+   ========================================================= */
+
+@supports (height: 100dvh) {
+
+  @media (max-width: 767px) {
+
+    .detail-modal-backdrop {
+      min-height: 100dvh;
+    }
+  }
+}
