@@ -796,14 +796,12 @@ mask-image: linear-gradient(
     display: none;
   }
 
-  .movie-rail-item,
-  .movie-rail-skeleton {
-    flex: 0 0 43vw;
-
-    max-width: 180px;
-
-    min-width: 0;
-  }
+ .movie-rail-item,
+.movie-rail-skeleton {
+  flex: 0 0 calc((100vw - 50px) / 2);
+  max-width: none;
+  min-width: 0;
+}
 
 
   /* ---------- MOVIE GRID ---------- */
