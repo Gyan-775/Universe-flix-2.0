@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Universe-flix - discover movies, get personalized recommendations, and find the right watch order for connected cinematic universes.">
+  <meta name="theme-color" content="#03030a">
+  <title>Universe-flix | Discover Your Next Movie</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <canvas id="bg-canvas" aria-hidden="true"></canvas>
+
+  <header class="site-header">
+    <nav id="navbar" class="navbar" aria-label="Main navigation">
+      <div class="brand-block">
+        <a class="logo" href="#top" aria-label="Universe-flix home">Universe-flix</a>
+        <p class="subtitle">Discover movies. Find your taste. Master every universe.</p>
+      </div>
+      <div class="nav-actions" aria-label="Quick actions">
+        <button id="open-quiz-btn" class="nav-btn" type="button">Taste Quiz</button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-noise" aria-hidden="true"></div>
+      <div class="hero-orbit orbit-a" aria-hidden="true"></div>
+      <div class="hero-orbit orbit-b" aria-hidden="true"></div>
+      <div class="hero-orbit orbit-c" aria-hidden="true"></div>
+      <div class="hero-beam beam-a" aria-hidden="true"></div>
+      <div class="hero-beam beam-b" aria-hidden="true"></div>
+      <div class="hero-content">
+        <div class="hero-kicker"><span class="pulse-dot"></span><span>THE MOVIE DISCOVERY ARCHIVE</span><span class="kicker-line"></span></div>
+        <p class="eyebrow">NOT A STREAMING CATALOG</p>
+        <h1 id="hero-title"><span>Find the story.</span><br><em>Then enter its universe.</em></h1>
+        <p class="hero-copy">
+          Explore connected franchises, uncover movies that fit your taste, and build the right path into every story - from a single film to an entire universe.
+        </p>
+        <div class="search-wrap">
+          <span class="search-glyph" aria-hidden="true">Search</span>
+          <label class="sr-only" for="search">Search movies or universes</label>
+          <input id="search" class="search-box" type="search" placeholder="Search a movie, universe, genre..." autocomplete="off">
+          <button id="clear-search" class="search-clear" type="button" aria-label="Clear search" hidden>x</button>
+          <span class="search-key" aria-hidden="true">/</span>
+        </div>
+        <div class="hero-actions">
+          <button id="hero-quiz-btn" class="primary-btn hero-primary" type="button"><span>Build My Taste Profile</span><span aria-hidden="true">-&gt;</span></button>
+          <button id="browse-btn" class="secondary-btn hero-secondary" type="button">Enter the archive</button>
+        </div>
+        <div class="hero-metrics" aria-label="Archive highlights">
+          <div><strong id="hero-movie-count">250+</strong><span>stories</span></div>
+          <div><strong>50+</strong><span>universes</span></div>
+          <div><strong>many</strong><span>story paths</span></div>
+        </div>
+      </div>
+      <div class="hero-side-note" aria-hidden="true"><span>SCROLL TO EXPLORE</span><i></i></div>
+    </section>
+
+    <section id="for-you" class="personalized-section" aria-labelledby="for-you-title">
+      <div class="section-heading reveal-up">
+        <div>
+          <p class="eyebrow">PERSONAL SIGNAL</p>
+          <h2 id="for-you-title">Picked for you<span class="heading-mark">*</span></h2>
+          <p id="taste-summary" class="section-copy">Take the taste quiz and let the archive learn what pulls you into a story.</p>
+        </div>
+        <button id="retake-quiz-btn" class="text-btn" type="button">Retake profile</button>
+      </div>
+      <div id="recommendation-grid" class="movie-grid" aria-live="polite">
+        <div class="empty-state" id="recommendation-empty">
+          <span class="empty-icon" aria-hidden="true">*</span>
+          <h3>Your recommendations will appear here</h3>
+          <p>Tell us your taste first, then we'll match it against the movie catalog.</p>
+          <button id="empty-quiz-btn" class="secondary-btn" type="button">Take the Taste Quiz</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="catalog" class="catalog-section" aria-labelledby="catalog-title">
+      <div class="section-heading catalog-heading">
+        <div>
+          <p class="eyebrow">THE ARCHIVE</p>
+          <h2 id="catalog-title">Choose a universe<span class="heading-mark">/</span></h2>
+          <p class="section-copy">Every franchise is a doorway. Pick one, or stay curious and browse everything.</p>
+        </div>
+        <p id="catalog-count" class="catalog-count" aria-live="polite"></p>
+      </div>
+      <div class="archive-rule" aria-hidden="true"><span></span><i></i><span></span></div>
+      <div class="filters" aria-label="Genre filters">
+        <button class="filter-btn active" data-filter="all" type="button" aria-pressed="true">All</button>
+        <button class="filter-btn" data-filter="action" type="button" aria-pressed="false">Action</button>
+        <button class="filter-btn" data-filter="sci-fi" type="button" aria-pressed="false">Sci-Fi</button>
+        <button class="filter-btn" data-filter="horror" type="button" aria-pressed="false">Horror</button>
+        <button class="filter-btn" data-filter="fantasy" type="button" aria-pressed="false">Fantasy</button>
+        <button class="filter-btn" data-filter="animation" type="button" aria-pressed="false">Animation</button>
+        <button class="filter-btn" data-filter="adventure" type="button" aria-pressed="false">Adventure</button>
+        <button class="filter-btn" data-filter="comedy" type="button" aria-pressed="false">Comedy</button>
+        <button class="filter-btn" data-filter="drama" type="button" aria-pressed="false">Drama</button>
+        <button class="filter-btn" data-filter="thriller" type="button" aria-pressed="false">Thriller</button>
+      </div>
+      <p id="no-results" class="no-results" hidden>No matches found. Try a different title, universe, or genre.</p>
+      <div id="universe-grid" class="universe-grid" aria-live="polite">
+        <div id="catalog-loading" class="loading-state">
+          <span class="loading-spinner" aria-hidden="true"></span>
+          <p>Loading cinematic universes...</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <template id="movie-card-template">
+    <article class="movie-card card" tabindex="0">
+      <div class="movie-poster-wrap">
+        <img class="movie-poster" src="" alt="" loading="lazy">
+        <div class="poster-fallback" aria-hidden="true">Poster</div>
+        <span class="movie-match" hidden></span>
+      </div>
+      <div class="movie-card-body">
+        <h3 class="movie-title"></h3>
+        <p class="movie-meta"></p>
+        <div class="movie-tags" aria-label="Movie genres"></div>
+        <div class="movie-card-footer">
+          <span class="movie-rating"></span>
+          <button class="details-btn" type="button">Details</button>
+        </div>
+      </div>
+    </article>
+  </template>
+
+  <dialog id="movie-modal" class="modal movie-modal" aria-labelledby="movie-modal-title">
+    <div class="modal-inner">
+      <button class="modal-close" data-close-modal="movie-modal" type="button" aria-label="Close movie details">x</button>
+      <div class="movie-detail-layout">
+        <div class="movie-detail-poster-wrap">
+          <img id="movie-modal-poster" class="movie-detail-poster" src="" alt="">
+          <div id="movie-modal-poster-fallback" class="poster-fallback" aria-hidden="true">Poster</div>
+        </div>
+        <div class="movie-detail-content">
+          <p id="movie-modal-universe" class="eyebrow"></p>
+          <h2 id="movie-modal-title"></h2>
+          <p id="movie-modal-meta" class="movie-detail-meta"></p>
+          <div id="movie-modal-ratings" class="rating-row"></div>
+          <div id="movie-modal-genres" class="movie-tags"></div>
+          <p id="movie-modal-overview" class="movie-overview"></p>
+          <div class="movie-detail-actions">
+            <a id="movie-imdb-link" class="secondary-btn" href="#" target="_blank" rel="noopener noreferrer">IMDb</a>
+            <button id="movie-trailer-btn" class="secondary-btn" type="button" hidden>Trailer</button>
+            <button id="watch-order-btn" class="primary-btn" type="button">What should I watch first?</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <dialog id="watch-order-modal" class="modal watch-order-modal" aria-labelledby="watch-order-title">
+    <div class="modal-inner">
+      <button class="modal-close" data-close-modal="watch-order-modal" type="button" aria-label="Close watch order">x</button>
+      <p class="eyebrow">STORY PATH</p>
+      <h2 id="watch-order-title">Your watch order</h2>
+      <p id="watch-order-subtitle" class="section-copy"></p>
+      <div class="watch-order-options" role="group" aria-label="Watch order type">
+        <button class="order-mode-btn active" data-order-mode="essential" type="button" aria-pressed="true">Essential</button>
+        <button class="order-mode-btn" data-order-mode="complete" type="button" aria-pressed="false">Complete</button>
+        <button class="order-mode-btn" data-order-mode="release" type="button" aria-pressed="false">Release order</button>
+      </div>
+      <ol id="watch-order-list" class="watch-order-list" aria-live="polite">
+        <li class="loading-state">Building your story path...</li>
+      </ol>
+    </div>
+  </dialog>
+
+  <dialog id="quiz-modal" class="modal quiz-modal" aria-labelledby="quiz-title">
+    <div class="modal-inner">
+      <button class="modal-close" data-close-modal="quiz-modal" type="button" aria-label="Close taste quiz">x</button>
+      <div class="quiz-header">
+        <p class="eyebrow">PERSONALIZATION</p>
+        <h2 id="quiz-title">Build your movie taste</h2>
+        <p>Answer a few questions. Your choices will become your recommendation profile.</p>
+      </div>
+      <div class="quiz-progress" aria-label="Quiz progress">
+        <span id="quiz-progress-text">Question 1 of 5</span>
+        <div class="progress-track"><div id="quiz-progress-bar" class="progress-bar" style="width:20%"></div></div>
+      </div>
+      <form id="taste-quiz-form">
+        <fieldset id="quiz-question" class="quiz-question">
+          <legend id="quiz-question-title">Loading your first question...</legend>
+          <div id="quiz-options" class="quiz-options"></div>
+        </fieldset>
+        <div class="quiz-navigation">
+          <button id="quiz-skip" class="text-btn" type="button">Skip</button>
+          <div>
+            <button id="quiz-back" class="secondary-btn" type="button" disabled>Back</button>
+            <button id="quiz-next" class="primary-btn" type="submit">Next</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </dialog>
+
+  <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+  <footer class="site-footer">
+    <p>Universe-flix - Your cinematic journey starts here.</p>
+  </footer>
+  <script src="script.js" defer></script>
+</body>
+</html>
