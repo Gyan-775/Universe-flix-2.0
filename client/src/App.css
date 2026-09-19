@@ -1149,7 +1149,10 @@ mask-image: linear-gradient(
     flex-basis: 100%;
   }
 }
-
+.search-page {
+  min-height: 100vh;
+  background: var(--bg);
+}
 
 /* =========================================================
    MOBILE VIEWPORT / BROWSER CHROME
