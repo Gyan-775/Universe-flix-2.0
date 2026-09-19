@@ -158,12 +158,12 @@ button { cursor: pointer; }
 .skeleton-wide { width: 84%; }
 .skeleton-short { width: 48%; }
 .signal-section {
-    position: relative;
-    width: 100%;
-    padding: 90px 0 110px;
-    border-top: 1px solid var(--line);
-    overflow: hidden;
-    isolation: isolate;
+  position: relative;
+  width: 100%;
+  padding: 90px max(20px, calc((100% - 1320px) / 2)) 110px;
+  border-top: 1px solid var(--line);
+  overflow: hidden;
+  isolation: isolate;
 }
 
 .signal-section::before {
@@ -632,18 +632,14 @@ mask-image: linear-gradient(
   }
 
   .section-heading h2,
-  .signal-section h2 {
-    width: 100%;
-    max-width: 100%;
-
-    margin: 9px 0 12px;
-
-    font-size: clamp(2rem, 10vw, 3.2rem);
-
-    line-height: .98;
-
-    overflow-wrap: anywhere;
-  }
+.signal-section h2 {
+  width: auto;
+  max-width: 900px;
+  margin: 10px 0 18px;
+  font-size: clamp(2.8rem, 5vw, 5.5rem);
+  line-height: .95;
+  letter-spacing: -.055em;
+}
 
   .section-heading p,
   .signal-section p {
