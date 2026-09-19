@@ -2,7 +2,7 @@ import { Link } from '../router'
 import { useApp } from '../context/AppContext'
 import { useSearch } from '../hooks/useSearch'
 import MovieGrid from '../components/movies/MovieGrid'
-
+import { backdropUrl } from '../utils/imageUrl'
 export default function SearchPage() {
   const { searchQuery, setSearchQuery } = useApp()
   const { results, loading, error, totalResults } = useSearch(searchQuery)
